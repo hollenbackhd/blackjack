@@ -1,26 +1,34 @@
-#ifndef CARD_H
-#define CARD_H
-
+#include <cctype>
 #include <iostream>
+#include <cctype>
 #include <vector>
+#include <string>
+#include "Card.h"
 using namespace std;
 
-class Card{
-    public:
-    void setName(string cardName);
-    void setSuit(string cardSuit);
-    void setValue(int cardValue);
-    string getName();
-    string getSuit();
-    int getValue();
-    void printCard();
-    Card();
-    Card(string cardName, string cardSuit, int cardValue);
-    
-    
-    //private:
-    string name;// "No Name";
-    string suit;// "No Suit";
-    int value;// 0;
-};
-#endif
+Card::Card(){
+    name = "No Name";
+    suit = "No Suit";
+    value = 0;
+}
+void Card::setName(string cardName){
+    name = cardName;
+}
+void Card::setSuit(string cardSuit){
+    suit = cardSuit;
+}
+void Card::setValue(int cardValue){
+    value = cardValue;
+}
+string Card::getName(){
+    return name;
+}
+string Card::getSuit(){
+    return suit;
+}
+int Card::getValue(){
+    return value;
+}
+void Card::printCard(){
+    cout<<name<<" of "<<suit<<endl;
+}
